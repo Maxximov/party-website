@@ -1,0 +1,41 @@
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/signup">Sign Up</a></li>
+                <li><a href="/homepage">Homepage</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/account">{{name}}</a></li>
+                <li><a href="/logout">logout</a></li>
+            </ul>
+        </div>
+    </div>
+
+<h2>Hi, {{name}}</h2>
+
+ {{#each card}}
+<div>
+  {{this.partyname}}
+  <a href="/party/edit/{{this._id}}">edit</a>
+  <a href="/party/delete/{{this._id}}" id = "linkdel">cancel event</a>
+</div>
+{{/each}}
+
+
+<script>
+let linkdel = document.getElementById('linkdel')
+linkdel.addEventListener('click', async (e) => {
+  e.preventDefault()
+console.log(e.target)
+
+  let response = await fetch( e.target.href, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json;charset=utf-8'
+    },
+  })
+  .then (( ) => window.location = '/account')
+})
+</script>

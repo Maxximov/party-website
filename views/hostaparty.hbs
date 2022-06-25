@@ -1,0 +1,34 @@
+<div class="container h-100">
+  <div class="row h-100 justify-content-center align-items-center">
+    <div class="col-10 col-md-10 col-lg-10">
+      <form class="items-form" action="/hostaparty" method="post">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputItem">Party name</label>
+            <input type="text" name="partyname" class="form-control" id="inputItem" />
+          </div> 
+          <div class="form-group col-md-6">
+            <label for="inputItem">Location</label>
+            <input type="text" name="location" class="form-control" id="inputLocation" />
+          </div> 
+          
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputStartAt">Starts At</label>
+            <input type="text" name="startsat" class="form-control" id="inputStartAt" />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputEndAt">Ends At</label>
+            <input type="text" name="endsat" class="form-control" id="inputEndAt" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea class="form-control" name="description" id="description" rows="3"></textarea>
+        </div>
+        <button type="submit" href="/account" class="btn btn-primary">Add a party</button>
+      </form>
+    </div>
+  </div>
+</div>

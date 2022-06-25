@@ -1,0 +1,50 @@
+  <style>
+    .thisevents {
+      border: 1px solid red;
+    }
+  </style>
+  
+  {{#if name}}
+<div
+          class="collapse navbar-collapse justify-content-end"
+          id="nav-content"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/account">{{name}}</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout">logout</a>
+            </li>
+          </ul>
+        </div>
+{{else}}
+<div
+          class="collapse navbar-collapse justify-content-end"
+          id="nav-content"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/login">login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/signup">signup</a>
+            </li>
+          </ul>
+        </div>
+{{/if}}
+
+ {{#each card}}
+<div class = "thisevents">
+  {{this.partyname}}
+  <br>
+  {{this.location}}
+  <br>
+ Start at: {{this.startsat}}
+ <br>
+ End at: {{this.endsat}}
+ <br>
+ Description: {{this.description}}
+</div>
+{{/each}}
+
